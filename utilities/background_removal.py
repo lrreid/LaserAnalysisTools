@@ -3,7 +3,17 @@ Functions to remove backgrounds from 1D and 2D datasets
 """
 
 import numpy as np
+from LaserAnalysisTools.core.rounding import find_nearest
 
+def remove_spectrometer_background(wavelength_data, intenisty_data, wavelength_min, wavelength_max):
+    
+    index_min = find_nearest(wavelength_data, wavelength_min)[0]
+    index_max = find_nearest(wavelength_data, wavelength_max)[0]
+    
+    background = np.average(intenisty_data[index_min:index_max] )
+    int_bg = intenisty_data - background
+    
+    return background, np.where(int_bg<0, 0, int_bg)
 
 def remove_image_background(image, bg_len, location):
     y_len, x_len = image.shape
