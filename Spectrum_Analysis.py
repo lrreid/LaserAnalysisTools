@@ -80,9 +80,7 @@ def do_spectrum_analysis(wavelength, intensity, remove_background: bool = False,
 
 
 def plot_spectrum(txt_dir: str, remove_background: bool = False, bg_limits = [925, 950], select_data: bool = False, select_limits = [650, 950], int_threshold = 1/np.exp(1)**2, Loop_files: bool = False, file_no=0, Save_Plots: bool = True, DPI = 150, fsize = 12):
-    """
-    Add saving of summary text file
-    """
+
     if Save_Plots is True:
         from matplotlib import use
         use("Agg")                  # "Agg" makes it possible to save plots without a display attached. Useful for analysis on remote computing cluster or saving plots in a loop without them opening.
