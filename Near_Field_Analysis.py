@@ -16,7 +16,7 @@ def SuperGauss_lst_sq(x_data, y_data, guess_vals):
     return fit_line, Coeff[0], Coeff[3], Coeff[1], Coeff[2]
 
 
-def get_size_from_px_intensity(int_data, x_data, target_counts, counts_rounding):
+def get_size_from_px_intensity(int_data, x_data, target_counts, counts_rounding)-> tuple[float, float, float]:
     
     n_points = np.size(int_data)
     
@@ -70,3 +70,11 @@ def SuperGauss_fit_image(image, smooth_data: bool = False, smooth_sigma: int = 5
 
     return fit_x, fit_y, [x_mm, y_mm], sizes_x, sizes_y, [thres_width_x, x_low_bound, x_high_bound], [thres_width_y, y_low_bound, y_high_bound]
 
+
+
+def plot_near_field(txt_dir: str, Loop_files: bool = False, file_no=0, Save_Plots: bool = False, DPI = 150, fsize = 12):
+     """
+     TO DO: Write this function to analyse images and produce plots
+     """
+
+     return None

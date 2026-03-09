@@ -103,7 +103,7 @@ def get_histogram_2d(data_x, bin_res_x, data_round_x, data_y, bin_res_y, data_ro
 
     hist_2d, _, _ = histogram2d(data_x, data_y, bins=(Bins_x, Bins_y), weights=weights )
 
-    return hist_2d, Bin_Min_x, Bin_Max_x, Bins_x, Bin_Min_y, Bin_Max_y, Bins_y
+    return hist_2d, [Bin_Min_x, Bin_Max_x, Bin_Min_y, Bin_Max_y], Bins_x, Bins_y
 
 
 
