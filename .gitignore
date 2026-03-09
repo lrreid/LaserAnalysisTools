@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__
+
+
+# Local folders
+*.egg-info
+\build
+\example*
+
+
+# Other
+*.pdf
+*.png
+
+# Work in progress files
+wip*

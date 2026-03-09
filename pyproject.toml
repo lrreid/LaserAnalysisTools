@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LaserAnalysisTools"
+authors = [{name = "Lewis Reid", email = "Lewis.Reid@stfc.ac.uk"}]
+requires-python = ">= 3.10"
+readme = "README.md"
+description = "Python package with tools to extract and analyse data from diagnostics for laser systems."
+license = {text = "BSD-3-Clause"}
+
+keywords = []
+dependencies = ["numpy", "scipy", "matplotlib"]
+classifiers = []
+dynamic = ["version"]
+
+[project.urls]
+Homepage="https://github.com/lrreid/LaserAnalysisTools"
+Repository="https://github.com/lrreid/LaserAnalysisTools.git"
+
+[tool.setuptools.dynamic]
+version = {attr = "LaserAnalysisTools.__version__"}
