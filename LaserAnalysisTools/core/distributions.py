@@ -200,18 +200,21 @@ def superGauss_beam_conversions_FWHM(order: float, FWHM: float, show_prints: boo
     """
 
     rms_radius     = (FWHM/2)*( (np.log( np.sqrt(np.exp(1)))/np.log(2))**(1/(2*order)) ) 
+    d63_radius     = (FWHM/2)*( (np.log( np.exp(1))/np.log(2))**(1/(2*order)) ) 
     e2_radius      = (FWHM/2)*( (np.log( np.exp(1)**2)/np.log(2))**(1/(2*order)) ) 
     one_pc_contour = (FWHM/2)*( (np.log( 1/0.01  )/np.log(2))**(1/(2*order)) ) 
     clear_aperture = (FWHM/2)*( (np.log( 1/0.001 )/np.log(2))**(1/(2*order)) ) 
 
     if show_prints is True:
-        print("For order %d and FWHM: %d" % (order, FWHM) )
+        print("For order %0.2f and FWHM: %0.2f" % (np.round(order, 2), np.round(FWHM, 2)) )
         print("RMS: %0.2f" % np.round(rms_radius, 2) )
+        print("d63 radius: %0.2f" % np.round(d63_radius, 2) )
+        print("1/e2 radius: %0.2f" % np.round(e2_radius, 2) )
         print("1/e2 dia: %0.2f" % np.round(e2_radius*2, 2) )
         print("1 %% intensity contour dia: %0.2f" % np.round(one_pc_contour*2, 2) )
         print("Clear aperture dia: %0.2f" % np.round(clear_aperture*2, 2) )
 
-    return rms_radius, e2_radius, one_pc_contour, clear_aperture
+    return rms_radius, d63_radius, e2_radius, one_pc_contour, clear_aperture
 
 
 def superGauss_beam_conversions_e2(order: float, e2_radius: float, show_prints: bool = False):
